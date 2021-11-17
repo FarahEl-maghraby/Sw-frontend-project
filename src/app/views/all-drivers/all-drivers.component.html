@@ -1,0 +1,32 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Driver Name</th>
+        <th scope="col">Mobile Number</th>
+        <th scope="col">National ID</th>
+        <th scope="col">License</th>
+        <th scope="col">Verified</th>
+        <th scope="col">Verirfication</th>
+        <th scope="col">Delete</th>
+       
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor='let driver of drivers'>
+        <td>{{driver.username}}</td>
+        <td>{{driver.mobilenumber}}</td>
+        <td>{{driver.nationalId}}</td>
+        <td>{{driver.driveLicense}}</td>
+        <td>{{driver.verified}}</td>
+        <td>
+          <a routerLink='/verifyDriver/{{driver._id}}'>
+              <button class="btn btn-sm btn-primary">Verify Driver</button>
+          </a>
+        </td>
+        <td>                           
+          <button class="btn btn-primary btn-sm" (click)='deleteDriver(driver)'>Delete Driver</button> 
+         </td>
+      </tr>
+
+    </tbody>
+  </table>

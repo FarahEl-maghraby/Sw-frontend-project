@@ -1,0 +1,27 @@
+<form #myForm='ngForm' (ngSubmit)='favAreas(myForm.value)' class="container mt-5">
+    <div class="form-group">
+        <label for="favAreas">Favorite Areas</label>
+        <select
+        class="form-control"
+        id="favAreas"
+        name="favoriteAreas"
+        ngModel
+        #favoriteAreas="ngModel"
+        required
+        multiple
+      >
+      <div class="errors d-flex justify-content-center" *ngIf='favoriteAreas.touched && favoriteAreas.invalid'>
+        <div *ngIf= 'favoriteAreas.errors?.required'>
+            *FavoriteAreas are required*
+        </div>
+        </div>
+        <option *ngFor = 'let country of Countries'>{{country}}</option>
+
+      </select>
+      
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]='myForm.invalid'>Submit</button>
+  </form>
+
+

@@ -1,0 +1,21 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Driver Name</th>
+        <th scope="col">Mobile Number</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor='let user of users'>
+        <td>{{user.username}}</td>
+        <td>{{user.mobilenumber}}</td>
+        <td>                           
+         <button class="btn btn-primary btn-sm" (click)='deleteUser(user)'>Delete User</button> 
+        </td>
+      </tr>
+
+
+    </tbody>
+  </table>
+

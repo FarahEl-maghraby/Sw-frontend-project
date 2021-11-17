@@ -1,0 +1,25 @@
+<form #myForm='ngForm' (ngSubmit)='editDriverRate(myForm.value)' class="container mt-5">
+    <div class="form-group">
+        <label for="rate">Rate</label>
+        <select
+        class="form-control"
+        id="rate"
+        name="rate"
+        ngModel
+        #rate="ngModel"
+        required
+      >
+        <option *ngFor = 'let rate of driverRate'>{{rate}}</option>
+
+      </select>
+      
+      <div class="errors d-flex justify-content-center" *ngIf='rate.touched && rate.invalid'>
+        <div *ngIf= 'rate.errors?.required'>
+            *Rate is required*
+        </div>
+    </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]='myForm.invalid'>Submit</button>
+  </form>
+

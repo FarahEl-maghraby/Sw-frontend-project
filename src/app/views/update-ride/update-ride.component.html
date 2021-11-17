@@ -1,0 +1,18 @@
+<form
+  #myForm="ngForm"
+  (ngSubmit)="formSubmit(myForm.value)"
+  class="container mt-5"
+>
+  <div class="form-group">
+    <input
+    type="number"
+      name="offer"
+      class="form-control mb-2"
+      [(ngModel)]="ride.offer"
+    />
+</div>
+    <button class="btn btn-primary d-flex justify-content-center">
+      Update
+    </button>
+ 
+</form>

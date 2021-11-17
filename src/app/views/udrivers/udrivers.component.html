@@ -1,0 +1,24 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Driver Name</th>
+        <th scope="col">Mobile Number</th>
+        <th scope="col">Average Rate</th>
+        <th scope="col">Rating</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor='let user of users'>
+        <td>{{user.username}}</td>
+        <td>{{user.mobilenumber}}</td>
+        <td>{{user.averageRate}}</td>
+        <td>                           
+            <a routerLink='/udrate/{{user._id}}'>
+                <button class="btn btn-primary btn-sm">Add rate</button>
+            </a>
+        </td>
+      </tr>
+
+
+    </tbody>
+  </table>

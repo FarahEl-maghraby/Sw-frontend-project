@@ -1,0 +1,28 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Source</th>
+        <th scope="col">Destination</th>
+        <!-- <th scope="col">User Name</th> -->
+        <th scope="col">Price</th>
+        <th scope="col">Accepted</th>
+        <th scope="col">Accept</th>
+        <th scope="col">Reject</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor='let ride of rides'>
+        <td>{{ride.source}}</td>
+        <td>{{ride.destination}}</td>
+        <!-- <td>{{ride.driver.username || null}}</td> -->
+        <td>{{ride.offer}}</td>
+        <td>{{ride.accepted}}</td>
+        <td>
+            <button class="btn btn-sm btn-success" (click)='accept(ride._id,ride)'>Accept</button>
+        </td>
+        <td>
+            <button class="btn btn-sm btn-danger" (click)='reject(ride._id,ride)'>Reject</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>

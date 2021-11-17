@@ -1,0 +1,13 @@
+<form #myForm='ngForm' (ngSubmit)='verify(myForm.value)' class="container mt-5">
+    <div class="custom-control form-control-lg custom-checkbox">
+    <input
+      type="checkbox"
+      class="custom-control-input"
+      id="verified"
+      name="verified"
+      [(ngModel)]='drivers.verified'
+    />
+    <label class="custom-control-label" for="verified">Verified</label>
+  </div>
+  <button type="submit" class="btn btn-primary" [disabled]='myForm.invalid'>Submit</button>
+</form>
