@@ -3,7 +3,7 @@
       <tr>
         <th scope="col">Source</th>
         <th scope="col">Destination</th>
-        <!-- <th scope="col">User Name</th> -->
+        <th scope="col">User Name</th>
         <th scope="col">Price</th>
         <th scope="col">Accepted</th>
         <th scope="col">Accept</th>
@@ -12,15 +12,15 @@
     </thead>
     <tbody>
       <tr *ngFor='let ride of rides'>
-        <td>{{ride.source}}</td>
-        <td>{{ride.destination}}</td>
-        <!-- <td>{{ride.driver.username || null}}</td> -->
-        <td>{{ride.offer}}</td>
-        <td>{{ride.accepted}}</td>
-        <td>
+        <td *ngIf='ride.driver'>{{ride.source}}</td>
+        <td *ngIf='ride.driver'>{{ride.destination}}</td>
+        <td *ngIf='ride.driver'>{{ride.driver.username}}</td>
+        <td *ngIf='ride.driver'>{{ride.offer}}</td>
+        <td *ngIf='ride.driver'>{{ride.accepted}}</td>
+        <td *ngIf='ride.driver'>
             <button class="btn btn-sm btn-success" (click)='accept(ride._id,ride)'>Accept</button>
         </td>
-        <td>
+        <td *ngIf='ride.driver'>
             <button class="btn btn-sm btn-danger" (click)='reject(ride._id,ride)'>Reject</button>
         </td>
       </tr>
