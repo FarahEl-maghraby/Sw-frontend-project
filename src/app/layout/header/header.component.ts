@@ -10,6 +10,8 @@ import { UserService } from 'src/app/services/user.service';
 export class HeaderComponent implements OnInit {
 
   user:any
+  isUser:boolean = false
+  isDriver:boolean = false
   logDriver:boolean = false
   role= localStorage.getItem('role')
   constructor(private authService:AuthService,private userService:UserService) { }
@@ -20,6 +22,20 @@ export class HeaderComponent implements OnInit {
     let token = this.authService.getToekn()
     // token = value
     if(token){
+      return true
+    }
+    return false
+  }
+
+  get userLoggedin(){
+    if(this.role ==='user'|| this.role==='admin'){
+      return true
+    }
+    return false
+  }
+
+  get driverLoggedin(){
+    if(this.role ==='driver'){
       return true
     }
     return false

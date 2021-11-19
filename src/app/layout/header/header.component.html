@@ -15,9 +15,14 @@
             <a class="nav-link" routerLink='/'  (click)='logout()' *ngIf='isLoggedin'>Logout</a>
           </li>
 
-          <!-- <li class="nav-item">
-            <a class="nav-link" routerLink='/'  (click)='logoutDriver()' *ngIf='isLoggedin'> Driver Logout</a>
-          </li> -->
+          <li class="nav-item">
+            <a class="nav-link" routerLink='/profile'  *ngIf='isLoggedin && userLoggedin'>Profile</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" routerLink='/driverProfile'  *ngIf='isLoggedin && driverLoggedin'>Profile</a>
+          </li>
+
   
         </ul>
       </div>

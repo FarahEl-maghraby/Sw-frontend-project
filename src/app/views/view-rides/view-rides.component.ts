@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Observable, timer } from 'rxjs';
 import { Rides } from 'src/app/interfaces/ridesModel';
 import { RidesService } from 'src/app/services/rides.service';
 import { UserService } from 'src/app/services/user.service';
@@ -8,9 +9,11 @@ import { UserService } from 'src/app/services/user.service';
   templateUrl: './view-rides.component.html',
   styleUrls: ['./view-rides.component.css']
 })
-export class ViewRidesComponent implements OnInit {
+export class ViewRidesComponent implements OnInit,OnDestroy {
 // realte to driver get rides wihch matches driver fav areas
   rides:Rides[] = []
+  subscription: any;
+  everytwoSeconds: Observable<number> = timer(0, 2000);
   constructor(private rideService:RidesService) { }
 
   
@@ -22,10 +25,20 @@ export class ViewRidesComponent implements OnInit {
       console.log(error)
     })
   }
-  ngOnInit(): void {
-    this.getDrivers()
 
+  ngOnInit() {
+    this.subscription = this.everytwoSeconds.subscribe(() => {
+       this.getDrivers()
+     });
+   }
+  
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
+  // ngOnInit(): void {
+  //   this.getDrivers()
+
+  // }
 
 }
 
