@@ -16,7 +16,6 @@ export class ShowRatingComponent implements OnInit {
   
   getSingleDriver(){
     this.driversService.getDriverRates().subscribe((res)=>{
-      console.log(res)
       this.drivers = res
     })
   }

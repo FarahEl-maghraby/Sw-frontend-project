@@ -16,9 +16,9 @@ export class UdriversComponent implements OnInit {
   getDrivers(){
     this.userService.getVerifiedDrivers().subscribe((res)=>{
       this.users = res
-      console.log(this.users)
+     
     },(error)=>{
-      console.log(error)
+     
     })
   }
   ngOnInit(): void {

@@ -15,17 +15,15 @@ export class UpdateRideComponent implements OnInit {
   constructor(private rideService: RidesService, private route:ActivatedRoute ,private router: Router) { }
   
   getMyData(): void{
-    console.log(this.route.snapshot.params)
+
     const id: string = this.route.snapshot.params.id;
     this.rideService.getSinRide(id).subscribe((res)=> this.ride = res);
   }
 
   formSubmit(ride:Rides){
     const id = this.route.snapshot.params.id;
-   // console.log(id)
     this.rideService.updatePrice(id, ride).subscribe((res)=> {
        this.ride = res 
-       console.log(res)
     });
     this.router.navigate(['/viewRides'])
 }

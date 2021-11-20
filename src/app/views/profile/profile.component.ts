@@ -29,7 +29,7 @@ export class ProfileComponent implements OnInit {
       this.userService.getVerifiedDrivers().subscribe(()=>{}) 
      }
     },(error)=>{
-        console.log(error)
+  
       })
    
   }

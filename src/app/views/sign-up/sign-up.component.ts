@@ -41,17 +41,14 @@ export class SignUpComponent implements OnInit {
       localStorage.setItem('role',this.role)
       this.router.navigate(['/profile'])
     },(httpError)=>{
-      console.log(httpError)
       this.errorFunction(httpError)
    
     })
   }
    else if(this.driverInfo === true){
-     console.log('dsfdsfd')
     this.authService.signUpDrivers(credentails).subscribe((res)=>{
       this.drivers = res
     },(httpError)=>{
-      console.log('test')
      this.errorFunction(httpError)
     })
  
@@ -59,16 +56,12 @@ export class SignUpComponent implements OnInit {
   }
 
   errorFunction(httpError:any){
-    console.log(httpError)
-    console.log('test1')
     if(httpError.error.code === 11000){
       this.invalidUserName = true
     }
    else if(httpError.error.errors.mobilenumber){
-     console.log('sajakjsakjs')
       this.invalidMobileNumber = true
       this.invalidMobileMsg = httpError.error.errors.mobilenumber.message
-      console.log(this.invalidMobileMsg)
     }
   }
 

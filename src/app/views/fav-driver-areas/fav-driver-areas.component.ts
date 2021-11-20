@@ -16,7 +16,7 @@ export class FavDriverAreasComponent implements OnInit {
   Countries:any = this.countriesService.cities
   favAreas(data:any){
     this.driversService.favDriverAreas(data).subscribe(()=>{
-      this.router.navigate(['driverProfile'])
+      this.router.navigate(['/driverProfile'])
     })
   }
   ngOnInit(): void {

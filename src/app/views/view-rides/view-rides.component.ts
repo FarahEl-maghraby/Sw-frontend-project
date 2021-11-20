@@ -20,9 +20,9 @@ export class ViewRidesComponent implements OnInit,OnDestroy {
   getDrivers(){
     this.rideService.getRides().subscribe((res)=>{
       this.rides = res
-      console.log(this.rides)
+     
     },(error)=>{
-      console.log(error)
+
     })
   }
 

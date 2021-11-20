@@ -18,9 +18,8 @@ export class UserRidesComponent implements OnInit,OnDestroy {
   getUserRides(){
     this.rideService.getUserRides().subscribe((res)=>{
       this.rides = res
-      console.log(this.rides)
+
     },(error)=>{
-      console.log(error)
     })
   }
 
@@ -28,7 +27,6 @@ export class UserRidesComponent implements OnInit,OnDestroy {
     this.rideService.acceptRide(data,ride).subscribe((res)=>{
       this.ngOnInit()
        
-      console.log(res)
     })
   }
 

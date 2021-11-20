@@ -17,7 +17,6 @@ export class VerifyDriversComponent implements OnInit {
   id:string = this.route.snapshot.params.id
   getSingleDriver(){
     this.adminService.getSingleDriverAdmin(this.id).subscribe((res)=>{
-      console.log(res)
       this.drivers = res
     })
   }

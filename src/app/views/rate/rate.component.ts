@@ -16,7 +16,6 @@ export class RateComponent implements OnInit {
   driverRate = [1,2,3,4,5]
   getSingleDriver(){
     this.userService.getSingleDriver(this.id).subscribe((res)=>{
-      console.log(res)
       this.drivers = res
     })
   }

@@ -16,9 +16,8 @@ export class AllDriversComponent implements OnInit {
   getDrivers(){
     this.adminService.getAllDrivers().subscribe((res)=>{
       this.drivers = res
-      console.log(this.drivers)
     },(error)=>{
-      console.log(error)
+
     })
   }
 

@@ -16,9 +16,7 @@ export class AllUsersComponent implements OnInit {
   getUsers(){
     this.adminService.getAllUsers().subscribe((res)=>{
       this.users = res
-      console.log(this.users)
     },(error)=>{
-      console.log(error)
     })
   }
   deleteUser(user:any){

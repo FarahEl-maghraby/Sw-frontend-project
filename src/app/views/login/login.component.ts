@@ -16,7 +16,6 @@ export class LoginComponent implements OnInit {
   role:any
   invalidLogin:boolean = false
   submit(credentails:any){
-    console.log('aaa')
     this.authService.loginUsers(credentails).subscribe((res)=>{
       this.users = res
       this.token = this.users.token
@@ -25,7 +24,6 @@ export class LoginComponent implements OnInit {
       localStorage.setItem('role',this.role)
       this.router.navigate(['/profile'])
     },(httpError)=>{
-      console.log(httpError)
       if(httpError){
         this.invalidLogin = true
       }

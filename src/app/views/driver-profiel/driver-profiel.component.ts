@@ -17,7 +17,6 @@ export class DriverProfielComponent implements OnInit {
   
   getProfile(){
     this.deriverService.getDriverProfile().subscribe((res)=>{
-      console.log(res)
       this.driver = res
   })
 }

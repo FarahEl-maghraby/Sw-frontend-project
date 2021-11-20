@@ -15,7 +15,7 @@ export class RequestRideComponent implements OnInit {
    Countries:any = this.countriesService.cities
  
    requestRide(credentials:any){
-     console.log('asas')
+
     this.userService.requestRide(credentials).subscribe(()=>{
       this.router.navigate(['/profile'])
     })

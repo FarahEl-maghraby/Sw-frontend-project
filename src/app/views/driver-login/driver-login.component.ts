@@ -19,13 +19,11 @@ export class DriverLoginComponent implements OnInit {
   submit(credentails:any){
     this.authService.loginDrivers(credentails).subscribe((res)=>{
       this.drivers = res
-      console.log(this.drivers)
       this.token = this.drivers.token
       this.role = this.drivers.driver.roles
       localStorage.setItem('token',this.token)
       localStorage.setItem('role',this.role)
       this.router.navigate(['/driverProfile'])
-      console.log(res)
     },(httpError)=>{
       if(httpError.error === 'eError: Sorry your account has not been verified yet')
      {
@@ -33,7 +31,6 @@ export class DriverLoginComponent implements OnInit {
        this.invalidDriver = true
      }
      else if(httpError){
-        console.log(httpError)
         this.invalidLogin = true
         this.invalidDriver = false
       }
