@@ -28,7 +28,7 @@ export class UserService {
     return this.http.get<Drivers>(this.baseUrl+'udriver/'+id)
   }
 
-  updateDrivers(id:any,driver:Drivers){
+  updateDriversRate(id:any,driver:Drivers){
     return this.http.patch(this.baseUrl+'udriver/'+id,driver)
   }
 
@@ -36,43 +36,4 @@ export class UserService {
     return this.http.post(this.baseUrl+'rides',credentials)
   }
   
-
-  ///////////////////////////////////////////////////////////////////////////////
-
-  // admin
-
-  // get all drivers admin
-
-  getAllDrivers(){
-    return this.http.get<Drivers[]>(this.baseUrl+'allDrivers')
-  }
-
-  // VerifyDrivers by admin
-  verifyDrivers(id:any,driver:Drivers){
-    return this.http.patch(this.baseUrl+'verifydriver/'+id,driver)
-  }
-
-  // Admin gettung all single drivers
-
-  getSingleDriverAdmin(id:any){
-    return this.http.get<Drivers>(this.baseUrl+'driver/'+id)
-  }
-
-  // get all users for admin
-  getAllUsers(){
-    return this.http.get<Users[]>(this.baseUrl+'users')
-  }
-
-  // Delete User
-  deleteUser(id:any){
-    return this.http.delete(this.baseUrl+'users/'+id)
-  }
-
-  // Delete Driver
-  deleteDriver(id:any){
-    return this.http.delete(this.baseUrl+'driver/'+id)
-  }
-
-  ////////////////////////////////////////////////////////////////////////////////
-
 }

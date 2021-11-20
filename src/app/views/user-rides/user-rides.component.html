@@ -18,10 +18,10 @@
         <td *ngIf='ride.driver'>{{ride.offer}}</td>
         <td *ngIf='ride.driver'>{{ride.accepted}}</td>
         <td *ngIf='ride.driver'>
-            <button class="btn btn-sm btn-success" (click)='accept(ride._id,ride)'>Accept</button>
+            <button class="btn btn-sm btn-success" (click)='acceptRide(ride._id,ride)'>Accept</button>
         </td>
         <td *ngIf='ride.driver'>
-            <button class="btn btn-sm btn-danger" (click)='reject(ride._id,ride)'>Reject</button>
+            <button class="btn btn-sm btn-danger" (click)='rejectRide(ride._id,ride)'>Reject</button>
         </td>
       </tr>
     </tbody>

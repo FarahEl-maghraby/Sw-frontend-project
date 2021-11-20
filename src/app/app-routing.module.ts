@@ -15,7 +15,7 @@ import { UdriversComponent } from './views/udrivers/udrivers.component';
 import { UpdateRideComponent } from './views/update-ride/update-ride.component';
 import { UserRidesComponent } from './views/user-rides/user-rides.component';
 import { VerifyDriversComponent } from './views/verify-drivers/verify-drivers.component';
-import { ViewRidesComponent } from './views/view-rides/view-rides.component';
+import { DriverRidesComponent } from './views/view-rides/view-rides.component';
 
 const routes: Routes = [
   {path:'',component:LoginComponent},
@@ -31,7 +31,7 @@ const routes: Routes = [
   {path:'driversRating',component:ShowRatingComponent},
   {path:'requestRide',component:RequestRideComponent},
   {path:'favoriteAreas',component:FavDriverAreasComponent},
-  {path:'viewRides',component:ViewRidesComponent},
+  {path:'viewRides',component:DriverRidesComponent},
   {path:'updateRide/:id',component:UpdateRideComponent},
   {path:'userRides',component:UserRidesComponent}
 ];

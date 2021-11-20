@@ -21,7 +21,4 @@ export class CountriesService {
 ]
   constructor() { }
 
-  getCountries(){
-    return this.cities
-  }
 }

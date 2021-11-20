@@ -26,7 +26,7 @@ export class AdminService {
 
   // Admin gettung all single drivers
 
-  getSingleDriverAdmin(id:any){
+  getSingleDriver(id:any){
     return this.http.get<Drivers>(this.baseUrl+'driver/'+id)
   }
 

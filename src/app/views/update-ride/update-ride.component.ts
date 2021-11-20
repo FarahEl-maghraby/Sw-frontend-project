@@ -14,13 +14,13 @@ export class UpdateRideComponent implements OnInit {
   ride: Rides ={}
   constructor(private rideService: RidesService, private route:ActivatedRoute ,private router: Router) { }
   
-  getMyData(): void{
+  getSinRide(): void{
 
     const id: string = this.route.snapshot.params.id;
     this.rideService.getSinRide(id).subscribe((res)=> this.ride = res);
   }
 
-  formSubmit(ride:Rides){
+  updatePrice(ride:Rides){
     const id = this.route.snapshot.params.id;
     this.rideService.updatePrice(id, ride).subscribe((res)=> {
        this.ride = res 
@@ -29,7 +29,7 @@ export class UpdateRideComponent implements OnInit {
 }
 
   ngOnInit(): void {
-    this.getMyData()
+    this.getSinRide()
   }
 
 }

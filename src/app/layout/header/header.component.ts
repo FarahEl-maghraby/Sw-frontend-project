@@ -10,9 +10,6 @@ import { UserService } from 'src/app/services/user.service';
 export class HeaderComponent implements OnInit {
 
   user:any
-  isUser:boolean = false
-  isDriver:boolean = false
-  logDriver:boolean = false
   role= localStorage.getItem('role')
   constructor(private authService:AuthService,private userService:UserService) { }
 

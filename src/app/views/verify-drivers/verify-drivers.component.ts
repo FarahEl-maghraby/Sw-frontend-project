@@ -16,11 +16,11 @@ export class VerifyDriversComponent implements OnInit {
   drivers: Drivers = {}
   id:string = this.route.snapshot.params.id
   getSingleDriver(){
-    this.adminService.getSingleDriverAdmin(this.id).subscribe((res)=>{
+    this.adminService.getSingleDriver(this.id).subscribe((res)=>{
       this.drivers = res
     })
   }
-  verify(driver:Drivers){
+  verifyDrivers(driver:Drivers){
     this.adminService.verifyDrivers(this.id,driver).subscribe(()=>{
       this.router.navigate(['/alldrivers'])
     })

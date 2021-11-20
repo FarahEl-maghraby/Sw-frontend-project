@@ -24,7 +24,7 @@ import { ShowRatingComponent } from './views/show-rating/show-rating.component';
 import { RequestRideComponent } from './views/request-ride/request-ride.component';
 import { CountriesService } from './services/countries.service';
 import { FavDriverAreasComponent } from './views/fav-driver-areas/fav-driver-areas.component';
-import { ViewRidesComponent } from './views/view-rides/view-rides.component';
+import { DriverRidesComponent } from './views/view-rides/view-rides.component';
 import { UpdateRideComponent } from './views/update-ride/update-ride.component';
 import { UserRidesComponent } from './views/user-rides/user-rides.component';
 import { DriversService } from './services/drivers.service';
@@ -49,7 +49,7 @@ import { RidesService } from './services/rides.service';
     ShowRatingComponent,
     RequestRideComponent,
     FavDriverAreasComponent,
-    ViewRidesComponent,
+    DriverRidesComponent,
     UpdateRideComponent,
     UserRidesComponent
   ],

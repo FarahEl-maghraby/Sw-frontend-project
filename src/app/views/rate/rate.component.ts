@@ -19,8 +19,8 @@ export class RateComponent implements OnInit {
       this.drivers = res
     })
   }
-  editDriverRate(driver:Drivers){
-    this.userService.updateDrivers(this.id,driver).subscribe((res)=>{
+  updateDriversRate(driver:Drivers){
+    this.userService.updateDriversRate(this.id,driver).subscribe((res)=>{
       this.router.navigate(['/udrivers'])
     })
   }

@@ -9,20 +9,20 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class UdriversComponent implements OnInit {
 
-  users:Drivers[] = []
+  drivers:Drivers[] = []
   constructor(private userService:UserService) { }
 
   
-  getDrivers(){
+  getVerifiedDrivers(){
     this.userService.getVerifiedDrivers().subscribe((res)=>{
-      this.users = res
+      this.drivers = res
      
     },(error)=>{
      
     })
   }
   ngOnInit(): void {
-    this.getDrivers()
+    this.getVerifiedDrivers()
 
   }
 

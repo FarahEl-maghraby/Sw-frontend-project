@@ -23,14 +23,14 @@ export class UserRidesComponent implements OnInit,OnDestroy {
     })
   }
 
-  accept(data:any,ride:any){
+  acceptRide(data:any,ride:any){
     this.rideService.acceptRide(data,ride).subscribe((res)=>{
       this.ngOnInit()
        
     })
   }
 
-  reject(data:any,ride:any){
+  rejectRide(data:any,ride:any){
     this.rideService.rejectRide(data,ride).subscribe((res)=>{
       this.ngOnInit()
 
@@ -48,9 +48,5 @@ export class UserRidesComponent implements OnInit,OnDestroy {
   ngOnDestroy() {
     this.subscription.unsubscribe();
   }
-  // ngOnInit(): void {
-  //   this.getDrivers()
-
-  // }
 
 }

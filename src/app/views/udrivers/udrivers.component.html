@@ -8,12 +8,12 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor='let user of users'>
-        <td>{{user.username}}</td>
-        <td>{{user.mobilenumber}}</td>
-        <td>{{user.averageRate}}</td>
+      <tr *ngFor='let driver of drivers'>
+        <td>{{driver.username}}</td>
+        <td>{{driver.mobilenumber}}</td>
+        <td>{{driver.averageRate}}</td>
         <td>                           
-            <a routerLink='/udrate/{{user._id}}'>
+            <a routerLink='/udrate/{{driver._id}}'>
                 <button class="btn btn-primary btn-sm">Add rate</button>
             </a>
         </td>

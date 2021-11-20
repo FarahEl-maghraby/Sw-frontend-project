@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Users } from 'src/app/interfaces/userModel';
+import { AdminService } from 'src/app/services/admin.service';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -12,7 +13,7 @@ export class ProfileComponent implements OnInit {
   user:Users = {}
   showVerifiedDrivers:boolean = true
   showDrivers:boolean = false
-  constructor(private userService:UserService) { }
+  constructor(private userService:UserService,private adminService:AdminService) { }
 
   
   getProfile(){
@@ -21,7 +22,7 @@ export class ProfileComponent implements OnInit {
       if(this.user.roles === 'admin'){
         this.showVerifiedDrivers = false
         this.showDrivers = true
-        this.userService.getAllDrivers().subscribe(()=>{}) 
+        this.adminService.getAllDrivers().subscribe(()=>{}) 
      } 
      else {
       this.showVerifiedDrivers = true

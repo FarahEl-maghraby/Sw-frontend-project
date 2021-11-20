@@ -9,7 +9,7 @@ import { UserService } from 'src/app/services/user.service';
   templateUrl: './view-rides.component.html',
   styleUrls: ['./view-rides.component.css']
 })
-export class ViewRidesComponent implements OnInit,OnDestroy {
+export class DriverRidesComponent implements OnInit,OnDestroy {
 // realte to driver get rides wihch matches driver fav areas
   rides:Rides[] = []
   subscription: any;
@@ -17,7 +17,7 @@ export class ViewRidesComponent implements OnInit,OnDestroy {
   constructor(private rideService:RidesService) { }
 
   
-  getDrivers(){
+  getRides(){
     this.rideService.getRides().subscribe((res)=>{
       this.rides = res
      
@@ -28,7 +28,7 @@ export class ViewRidesComponent implements OnInit,OnDestroy {
 
   ngOnInit() {
     this.subscription = this.everytwoSeconds.subscribe(() => {
-       this.getDrivers()
+       this.getRides()
      });
    }
   

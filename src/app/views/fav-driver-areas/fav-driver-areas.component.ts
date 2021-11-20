@@ -14,7 +14,7 @@ export class FavDriverAreasComponent implements OnInit {
   constructor(private countriesService:CountriesService, private driversService:DriversService,private router:Router) { }
  
   Countries:any = this.countriesService.cities
-  favAreas(data:any){
+  favDriverAreas(data:any){
     this.driversService.favDriverAreas(data).subscribe(()=>{
       this.router.navigate(['/driverProfile'])
     })

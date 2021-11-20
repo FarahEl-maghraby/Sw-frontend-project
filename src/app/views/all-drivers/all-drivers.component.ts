@@ -13,7 +13,7 @@ export class AllDriversComponent implements OnInit {
   constructor(private adminService:AdminService) { }
 
   
-  getDrivers(){
+  getAllDrivers(){
     this.adminService.getAllDrivers().subscribe((res)=>{
       this.drivers = res
     },(error)=>{
@@ -29,7 +29,7 @@ export class AllDriversComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getDrivers()
+    this.getAllDrivers()
 
   }
 

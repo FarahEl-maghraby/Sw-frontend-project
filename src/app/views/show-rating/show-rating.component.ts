@@ -14,13 +14,13 @@ export class ShowRatingComponent implements OnInit {
 
   constructor(private driversService:DriversService) { }
   
-  getSingleDriver(){
+  getDriverRates(){
     this.driversService.getDriverRates().subscribe((res)=>{
       this.drivers = res
     })
   }
   ngOnInit(): void {
-    this.getSingleDriver()
+    this.getDriverRates()
   }
 
 }

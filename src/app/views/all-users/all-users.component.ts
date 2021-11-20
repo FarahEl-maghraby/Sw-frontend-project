@@ -13,7 +13,7 @@ export class AllUsersComponent implements OnInit {
   constructor(private adminService:AdminService) { }
 
   
-  getUsers(){
+  getAllUsers(){
     this.adminService.getAllUsers().subscribe((res)=>{
       this.users = res
     },(error)=>{
@@ -26,7 +26,7 @@ export class AllUsersComponent implements OnInit {
     })
   }
   ngOnInit(): void {
-    this.getUsers()
+    this.getAllUsers()
 
   }
 
