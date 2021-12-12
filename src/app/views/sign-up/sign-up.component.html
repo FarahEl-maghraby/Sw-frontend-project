@@ -11,7 +11,7 @@
         #username = 'ngModel'
         required
         minlength="3"
-        (focus)='invalidLoginFun()'
+        (focus)='changeUserName()'
       />
       <div class="errors d-flex justify-content-center" *ngIf='username.touched && username.invalid'>
       <div *ngIf= 'username.errors?.required'>
@@ -22,7 +22,7 @@
       </div>
       </div>
 
-      <div class="errors d-flex justify-content-center" *ngIf='invalidUserName'>
+      <div class="errors d-flex justify-content-center" *ngIf='!username.errors?.required && invalidUserName'>
         *Username is already in use*
       </div>
   
@@ -39,7 +39,7 @@
         name="mobilenumber"
         #mobilenumber = 'ngModel'
         required
-        (focus)='invalidLoginFun()'
+        (focus)='changeMobile()'
       />
       <div class="errors d-flex justify-content-center" *ngIf='mobilenumber.touched && mobilenumber.invalid'>
       <div *ngIf= 'mobilenumber.errors?.required'>
@@ -150,10 +150,11 @@
     
       </div>
 
+
       <div class="form-group" *ngIf='driverInfo'>
         <label for="nationalId">National ID</label>
         <input
-          type="text"
+          type="number"
           class="form-control mt-2"
           id="nationalId"
           placeholder="Enter nationalId"
@@ -161,45 +162,23 @@
           name="nationalId"
           #nationalId = 'ngModel'
           required
-          minlength="14"
+          (focus)='changeNationalID()'
         />
         <div class="errors d-flex justify-content-center" *ngIf='nationalId.touched && nationalId.invalid'>
         <div *ngIf= 'nationalId.errors?.required'>
-            *National ID is required*
+            *NationalID is required*
         </div>
-        <div *ngIf='nationalId.errors?.minlength'>
-        *National ID minlength is {{nationalId.errors?.minlength.requiredLength}}*
         </div>
+  
+        <div class="errors d-flex justify-content-center" *ngIf='!nationalId.errors?.required && invalidNationalID'>
+          *NationalID must be 14 digits*
         </div>
     
       </div>
   
       <br>
     <button type="submit" class="btn btn-lg btn-primary mt-2 mb-5" [disabled]='myForm.invalid' *ngIf='userInfo'>Submit User</button>
-    <button type="submit" class="btn btn-lg btn-primary mt-2 mb-5" data-toggle="modal" data-target="#exampleModal" [disabled]='myForm.invalid' *ngIf='driverInfo'>Submit Driver</button>
-  <!-- Button trigger modal -->
+    <button type="submit" class="btn btn-lg btn-primary mt-2 mb-5" [disabled]='myForm.invalid' *ngIf='driverInfo'>Submit Driver</button>
 
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Seuccess</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        Thank you your request has been sent to the admin..
-      </div>
-      <div class="modal-footer">
-        <a routerLink='/logindriver'>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </a>
-      </div>
-    </div>
-  </div>
-</div>
   </form>
   

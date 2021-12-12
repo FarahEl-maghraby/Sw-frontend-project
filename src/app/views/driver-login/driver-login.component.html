@@ -53,11 +53,13 @@
   
     </div>
 
-    <div class="errors d-flex justify-content-center" *ngIf='invalidLogin'>
+    <div class="errors d-flex justify-content-center" 
+    *ngIf='!username.errors?.required && !password.errors?.required  && !password.errors?.minlength && !username.errors?.minlength && invalidLogin'>
         *Please check username or password*
     </div>
 
-    <div class="errors d-flex justify-content-center" *ngIf='invalidDriver'>
+    <div class="errors d-flex justify-content-center" 
+    *ngIf='!username.errors?.required && !password.errors?.required  && !password.errors?.minlength && !username.errors?.minlength  &&invalidDriver'>
       *Sorry your account has not been verified yet*
   </div>
 

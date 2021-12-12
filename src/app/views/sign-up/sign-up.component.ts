@@ -14,6 +14,7 @@ export class SignUpComponent implements OnInit {
   invalidMobileNumber:boolean = false
   invalidUserName:boolean = false
   invalidMobileMsg:string = ''
+  invalidNationalID:boolean = false
   users:any
   drivers:any
   token:any
@@ -56,18 +57,33 @@ export class SignUpComponent implements OnInit {
   }
 
   errorFunction(httpError:any){
-    if(httpError.error.code === 11000){
-      this.invalidUserName = true
+    console.log(httpError)
+    if(httpError.error){
+      if(httpError.error.code === 11000) {
+        this.invalidUserName = true
+      }
+      else if(httpError.error.errors.mobilenumber){
+        this.invalidMobileNumber = true
+        this.invalidMobileMsg = httpError.error.errors.mobilenumber.message
+      }
+      else if (httpError.error.errors.nationalId){
+        this.invalidNationalID = true
+      }
+     
     }
-   else if(httpError.error.errors.mobilenumber){
-      this.invalidMobileNumber = true
-      this.invalidMobileMsg = httpError.error.errors.mobilenumber.message
-    }
+    
   }
 
-  invalidLoginFun(){
+  changeMobile(){
     this.invalidMobileNumber= false
+  }
+
+  changeUserName(){
     this.invalidUserName = false
+  }
+
+  changeNationalID(){
+   this.invalidNationalID = false
   }
   
   

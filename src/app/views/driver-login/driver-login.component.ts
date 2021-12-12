@@ -25,6 +25,7 @@ export class DriverLoginComponent implements OnInit {
       localStorage.setItem('role',this.role)
       this.router.navigate(['/driverProfile'])
     },(httpError)=>{
+      console.log(httpError)
       if(httpError.error === 'eError: Sorry your account has not been verified yet')
      {
        this.invalidLogin = false

@@ -21,7 +21,7 @@
             <button class="btn btn-sm btn-success" (click)='acceptRide(ride._id,ride)'>Accept</button>
         </td>
         <td *ngIf='ride.driver'>
-            <button class="btn btn-sm btn-danger" (click)='rejectRide(ride._id,ride)'>Reject</button>
+            <button class="btn btn-sm btn-danger" (click)='rejectRide(ride._id,ride)' [disabled]='ride.accepted'>Reject</button>
         </td>
       </tr>
     </tbody>
