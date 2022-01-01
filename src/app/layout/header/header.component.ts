@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { AuthService } from 'src/app/services/auth.service';
 import { UserService } from 'src/app/services/user.service';
 
@@ -11,8 +12,11 @@ export class HeaderComponent implements OnInit {
 
   user:any
   role= localStorage.getItem('role')
-  constructor(private authService:AuthService,private userService:UserService) { }
+  constructor(private authService:AuthService,private titleService:Title) { }
 
+  public setTitle(newTitle: string) {
+    this.titleService.setTitle(newTitle);
+  }
   get isLoggedin(){
     // if token --> false 
     // else --> true

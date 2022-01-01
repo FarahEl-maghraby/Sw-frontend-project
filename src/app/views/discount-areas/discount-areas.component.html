@@ -1,0 +1,46 @@
+<form #myForm='ngForm' (ngSubmit)='discountAreass(myForm.value)' class="container mt-5" *ngIf='submit'>
+    <div class="form-group">
+        <label for="discountAreas">Discount Areas</label>
+        <select
+        class="form-control"
+        id="discountAreas"
+        name="discountAreas"
+        ngModel
+        #discountAreas="ngModel"
+        required
+        multiple
+      >
+     
+        <option *ngFor = 'let country of Countries'>{{country}}</option>
+
+      </select>
+      
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+
+
+  <form #myForm='ngForm' (ngSubmit)='editDiscountAreas(myForm.value)' class="container mt-5" *ngIf='update'>
+    <div class="form-group">
+        <label for="discountAreas">Discount Areas</label>
+        <select
+        class="form-control"
+        id="discountAreas"
+        name="discountAreas"
+        [(ngModel)]="areas"
+        multiple
+      >
+     
+        <option *ngFor = 'let country of Countries'>{{country}}</option>
+
+      </select>
+      
+    </div>
+
+    <button type="submit" class="btn btn-primary" >Update</button>
+  </form>
+
+
+
+

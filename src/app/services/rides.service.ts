@@ -39,4 +39,9 @@ export class RidesService {
       return this.http.patch(this.baseUrl+'userRidesReject/'+id,data)
     }
 
+    // new requirment 
+    getDriverRides(){
+      return this.http.get(this.baseUrl+'driverRides')
+    }
+
 }

@@ -1,0 +1,35 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">User Name</th>
+        <th scope="col">Driver Name</th>
+        <th scope="col">Offer</th>
+        <th scope="col">Accepted</th>
+        <th scope="col">CreatedAt</th>
+        <th scope="col">UpdatedAt</th>
+        <th scope="col">Driver arrived in source area</th>
+        <th scope="col">Driver arrived in destention area</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor='let ride of rides'>
+        <td *ngIf='ride.user'>{{ride.user.username}}</td>
+        <td *ngIf='ride.driver; else elseBlock'>{{ride.driver.username}}</td>
+        <ng-template #elseBlock>
+            <td>No driver yet</td>
+        </ng-template>
+        <td *ngIf='ride.accepted; else priceBlock'>{{ride.offer}}</td>
+        <ng-template #priceBlock>
+            <td>0</td>
+        </ng-template>
+        <td>{{ride.accepted}}</td>
+        <td>{{ride.createdAt}}</td>
+        <td>{{ride.updatedAt}}</td>
+        <td>{{ride.arrivedDestinaition}}</td>
+        <td>{{ride.arrivedSource}}</td>
+      </tr>
+
+
+    </tbody>
+  </table>
+

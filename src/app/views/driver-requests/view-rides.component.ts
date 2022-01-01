@@ -11,6 +11,8 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class DriverRidesComponent implements OnInit,OnDestroy {
 // realte to driver get rides wihch matches driver fav areas
+
+// requestsssss
   rides:Rides[] = []
   subscription: any;
   everytwoSeconds: Observable<number> = timer(0, 2000);
@@ -19,7 +21,9 @@ export class DriverRidesComponent implements OnInit,OnDestroy {
   
   getRides(){
     this.rideService.getRides().subscribe((res)=>{
+      console.log(res)
       this.rides = res
+   
      
     },(error)=>{
 

@@ -5,12 +5,40 @@
 >
   <div class="form-group">
     <input
+    *ngIf="!ride.accepted"
     type="number"
       name="offer"
       class="form-control mb-2"
       [(ngModel)]="ride.offer"
     />
 </div>
+
+<div class="form-check">
+  <input
+    type="checkbox"
+    class="form-check-input" 
+    id="arrivedDestinaition"
+    name="arrivedDestinaition"
+    [(ngModel)]='ride.arrivedDestinaition'
+    [disabled]='!ride.arrivedSource!'
+  />
+  <label class="form-check-label" for="arrivedDestinaition">Arrive in destination</label>
+</div>
+
+<div class="form-check">
+  <input class="form-check-input" 
+  type="checkbox" 
+  id="arrivedSource"
+  name="arrivedSource"
+  [(ngModel)]='ride.arrivedSource'
+  >
+  <label class="form-check-label" for="arrivedSource">
+    Arrive in user source area
+  </label>
+</div>
+
+
+
     <button class="btn btn-primary d-flex justify-content-center">
       Update
     </button>

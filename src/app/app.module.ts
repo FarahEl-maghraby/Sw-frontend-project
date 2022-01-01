@@ -24,12 +24,17 @@ import { ShowRatingComponent } from './views/show-rating/show-rating.component';
 import { RequestRideComponent } from './views/request-ride/request-ride.component';
 import { CountriesService } from './services/countries.service';
 import { FavDriverAreasComponent } from './views/fav-driver-areas/fav-driver-areas.component';
-import { DriverRidesComponent } from './views/view-rides/view-rides.component';
+import { DriverRidesComponent } from './views/driver-requests/view-rides.component';
 import { UpdateRideComponent } from './views/update-ride/update-ride.component';
 import { UserRidesComponent } from './views/user-rides/user-rides.component';
 import { DriversService } from './services/drivers.service';
 import { AdminService } from './services/admin.service';
 import { RidesService } from './services/rides.service';
+import { AllRidesComponent } from './views/all-rides/all-rides.component';
+import { DiscountAreasComponent } from './views/discount-areas/discount-areas.component';
+import { DiscountService } from './services/discount.service';
+import { RidesOfDriverComponent } from './views/rides-of-driver/rides-of-driver.component';
+
 
 @NgModule({
   declarations: [
@@ -51,7 +56,11 @@ import { RidesService } from './services/rides.service';
     FavDriverAreasComponent,
     DriverRidesComponent,
     UpdateRideComponent,
-    UserRidesComponent
+    UserRidesComponent,
+    AllRidesComponent,
+    DiscountAreasComponent,
+    DriverRidesComponent,
+    RidesOfDriverComponent
   ],
   imports: [
     BrowserModule,
@@ -67,6 +76,7 @@ import { RidesService } from './services/rides.service';
     RidesService,
     UdriversComponent,
     CountriesService,
+    DiscountService,
     {
       provide:HTTP_INTERCEPTORS,
       useClass:TokenInterceptorService,

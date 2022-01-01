@@ -25,7 +25,7 @@ export class UpdateRideComponent implements OnInit {
     this.rideService.updatePrice(id, ride).subscribe((res)=> {
        this.ride = res 
     });
-    this.router.navigate(['/viewRides'])
+    this.router.navigate(['/driverProfile'])
 }
 
   ngOnInit(): void {

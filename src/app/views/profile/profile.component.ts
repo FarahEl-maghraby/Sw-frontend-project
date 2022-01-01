@@ -18,6 +18,7 @@ export class ProfileComponent implements OnInit {
   
   getProfile(){
     this.userService.getProfile().subscribe((res)=>{
+      console.log(res)
       this.user = res
       if(this.user.roles === 'admin'){
         this.showVerifiedDrivers = false

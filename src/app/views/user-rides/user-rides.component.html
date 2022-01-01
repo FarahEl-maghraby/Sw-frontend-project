@@ -1,13 +1,16 @@
 <table class="table">
     <thead>
       <tr>
-        <th scope="col">Source</th>
+        <th scope="col">Sourceee</th>
         <th scope="col">Destination</th>
         <th scope="col">User Name</th>
         <th scope="col">Price</th>
+        <th scope="col">Price after discount</th>
         <th scope="col">Accepted</th>
-        <th scope="col">Accept</th>
-        <th scope="col">Reject</th>
+        <th scope="col">Arrive in Source area</th>
+        <th scope="col">Arrive in destnation area</th>
+        <th scope="col">Accept ride</th>
+        <th scope="col">Reject ride</th>
       </tr>
     </thead>
     <tbody>
@@ -16,9 +19,12 @@
         <td *ngIf='ride.driver'>{{ride.destination}}</td>
         <td *ngIf='ride.driver'>{{ride.driver.username}}</td>
         <td *ngIf='ride.driver'>{{ride.offer}}</td>
+        <td *ngIf='ride.driver'>{{ride.discount}}</td>
         <td *ngIf='ride.driver'>{{ride.accepted}}</td>
+         <td *ngIf='ride.driver'>{{ride.arrivedSource}}</td>
+         <td *ngIf='ride.driver'>{{ride.arrivedDestinaition}}</td>
         <td *ngIf='ride.driver'>
-            <button class="btn btn-sm btn-success" (click)='acceptRide(ride._id,ride)'>Accept</button>
+            <button class="btn btn-sm btn-success" (click)='acceptRide(ride._id,ride)' [disabled]='ride.accepted'>Accept</button>
         </td>
         <td *ngIf='ride.driver'>
             <button class="btn btn-sm btn-danger" (click)='rejectRide(ride._id,ride)' [disabled]='ride.accepted'>Reject</button>

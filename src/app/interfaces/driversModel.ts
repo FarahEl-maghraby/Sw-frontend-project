@@ -10,7 +10,4 @@ export interface Drivers{
   rate?:number[]
   averageRate?:number
 
-
-    
-
 }

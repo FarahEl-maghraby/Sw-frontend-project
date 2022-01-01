@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Drivers } from '../interfaces/driversModel';
+import { Rides } from '../interfaces/ridesModel';
 import { Users } from '../interfaces/userModel';
 
 @Injectable({
@@ -47,4 +48,7 @@ export class AdminService {
 
   ////////////////////////////////////////////////////////////////////////////////
 
+  getAllRides(){
+    return this.http.get<Rides[]>(this.baseUrl+'allRides')
+  }
 }

@@ -1,0 +1,31 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Source</th>
+        <th scope="col">Destination</th>
+        <th scope="col">UserName</th>
+        <th scope="col">Price</th>
+        <th scope="col">Accepted</th>
+        <th scope="col">Passengers</th>
+        <th scope="col">Update</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor='let ride of rides'>
+        <td>{{ride.source}}</td>
+        <td>{{ride.destination}}</td>
+        <td>{{ride.user.username}}</td>
+        <td>{{ride.offer}}</td>
+        <td>{{ride.accepted}}</td>
+        <td>{{ride.passengers}}</td>
+        <td *ngIf='ride.offer ===0'>
+            <a routerLink='/updateRide/{{ride._id}}'>
+                <button class="btn btn-sm btn-primary" [disabled]='ride.arrivedDestinaition'>Update</button>
+            </a>
+        </td>
+      </tr>
+
+
+    </tbody>
+  </table>
+
